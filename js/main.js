@@ -26,15 +26,14 @@ $(document).ready(function () {
     });
 
 
-    var rng = document.getElementById('seek');
-    var text = document.querySelectorAll('p.content-text');
-    rng.addEventListener("input", function() {
-        text.style.fontSize = rng.value + 'px'
+    $("#fontF").change(function() {
+        $('.content-text').css("font-family", $(this).val());
+
     });
 
-
-
-
+    $("#fontS").change(function() {
+        $('.content-text').css("font-size", $(this).val() + "px");
+    });
 
     // EVENT RESIZE WINDOW
 
@@ -73,18 +72,11 @@ $(document).ready(function () {
 
     });
 
-    // $('.header-remove-text').click(function () {
-    //
-    //     //console.log($('.header-remove-text').find("p").last());
-    //
-    //     $('.header-remove-text').find('p:last').remove();
-    // })
-
     $('.header-remove-text').click(function () {
 
         console.log('123');
 
-        $('.header-remove-text .container p:last-child').fadeOut('slow',function(){
+        $('.content .container p:last-child').fadeOut('slow',function(){
             $(this).remove();
         });
 
